@@ -5,6 +5,8 @@
  */
 package Visao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Anézio
@@ -57,6 +59,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton_Acessar.setBounds(141, 160, 80, 23);
 
         jButton_Sair.setText("Sair");
+        jButton_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_SairActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton_Sair);
         jButton_Sair.setBounds(240, 160, 51, 23);
 
@@ -74,10 +81,20 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AcessarActionPerformed
+        if(jTextField_Usuario.getText().equals("admin") && jPasswordField_Senha.getText().equals("admin")){
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
         dispose();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Usuário ou senha inválidos.");
+            jTextField_Usuario.setText("");
+            jPasswordField_Senha.setText("");
+        }
     }//GEN-LAST:event_jButton_AcessarActionPerformed
+
+    private void jButton_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButton_SairActionPerformed
 
     /**
      * @param args the command line arguments

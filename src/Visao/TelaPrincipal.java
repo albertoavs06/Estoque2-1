@@ -126,6 +126,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu_Cadastro.setText("Cadastro");
 
         jMenuItem_Clientes.setText("Clientes");
+        jMenuItem_Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_ClientesActionPerformed(evt);
+            }
+        });
         jMenu_Cadastro.add(jMenuItem_Clientes);
 
         jMenuItem_Fornecedores.setText("Fornecedores");
@@ -144,7 +149,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu_Ferramentas.setText("Ferramentas");
 
-        jMenuItem_TelaBemVindos.setText("Tela Bem-Vindos");
+        jMenuItem_TelaBemVindos.setText("Tela Bem-Vindo");
         jMenuItem_TelaBemVindos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem_TelaBemVindosActionPerformed(evt);
@@ -173,11 +178,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem_TelaBemVindosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_TelaBemVindosActionPerformed
-        // TODO add your handling code here:
+        TelaPrincipal tela = new TelaPrincipal();
+        tela.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jMenuItem_TelaBemVindosActionPerformed
 
     private void jButton_CadClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CadClientesActionPerformed
-        // TODO add your handling code here:
+        TelaClientes tela = new TelaClientes();
+        tela.setVisible(true);
     }//GEN-LAST:event_jButton_CadClientesActionPerformed
 
     private void jButton_CadMaterialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CadMaterialActionPerformed
@@ -191,6 +199,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jMenuItem_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_SairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem_SairActionPerformed
+
+    private void jMenuItem_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ClientesActionPerformed
+        TelaClientes tela = new TelaClientes();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItem_ClientesActionPerformed
 
     /**
      * @param args the command line arguments
